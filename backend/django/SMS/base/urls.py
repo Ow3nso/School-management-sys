@@ -6,8 +6,8 @@ from base import views
 
 
 contact_list = views.ContactView.as_view({
+    'post': 'create',
     'get': 'list',
-    'post': 'create'
 })
 contact_detail = views.ContactView.as_view({
     'get': 'retrieve',
@@ -15,7 +15,7 @@ contact_detail = views.ContactView.as_view({
 })
 
 urlpatterns=[
-        path('contact/', contact_list, name='contact_list'),
+        path('contacts/', contact_list, name='contact_list'),
         path('contact/<int:pk>', contact_detail, name='contact_detail'),
     ]
 
